@@ -1,17 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const {
-    getAllIssues,
-    getIssueById,
+    getIssues,
     createIssue,
-    updateIssueStatus,
-    addCommentToIssue,
+    getIssueById,
+    deleteIssue,
 } = require("../controllers/issueController");
 
-router.get("/", getAllIssues);
-router.get("/:id", getIssueById);
+router.get("/", getIssues);
 router.post("/", createIssue);
-router.put("/:id", updateIssueStatus);
-router.post("/:id/comments", addCommentToIssue);
+router.get("/:id", getIssueById);
+router.delete("/:id", deleteIssue);
 
 module.exports = router;

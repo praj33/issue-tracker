@@ -20,8 +20,19 @@ function IssueCard({ issue }) {
             </h3>
 
             <p className="text-sm text-gray-500 line-clamp-2">
-                {issue.description}
+                {issue.description || "No description provided."}
             </p>
+
+            {(issue.project || issue.assignee) && (
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-500">
+                    {issue.project && (
+                        <span>📁 {issue.project}</span>
+                    )}
+                    {issue.assignee && (
+                        <span>👤 {issue.assignee}</span>
+                    )}
+                </div>
+            )}
 
             <div className="flex items-center gap-2 mt-auto pt-2">
                 <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${statusColors[issue.status] || "bg-gray-100 text-gray-700"}`}>
