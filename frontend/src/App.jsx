@@ -1,11 +1,7 @@
+import Dashboard from "./pages/Dashboard";
+
 function App() {
-  return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-5xl font-bold text-blue-600">
-        Issue Tracker Dashboard 🚀
-      </h1>
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;
