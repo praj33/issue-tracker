@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
     res.json({ message: "Issue Tracker API is running" });
 });
 
+// Routes
+const issueRoutes = require("./routes/issueRoutes");
+app.use("/api/issues", issueRoutes);
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
